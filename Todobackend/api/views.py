@@ -35,7 +35,7 @@ def api_detail(request, pk):
         dvar = Contact.objects.get(pk=pk)
     except Contact.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-
+ 
     if request.method == 'GET':
         serializer = ContactSerializer(dvar)
         return Response(serializer.data)
